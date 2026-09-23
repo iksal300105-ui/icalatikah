@@ -11,11 +11,11 @@ const CONFIG = {
     nama: "Atika",
 
     // 2. UCAPAN: Teks ucapan yang muncul di halaman kedua (setelah buka kado)
-    ucapan: "Selamat bertambah usia! Semoga panjang umur, sehat selalu, dan semua hal indah yang kamu doakan tahun ini bisa tercapai. Ini hanya sekadar kado digital sederhana, semoga kamu suka ya!",
+    ucapan: "Selamat bertambah usia sayang! Semoga panjang umur, sehat selalu, dan semua hal indah yang kamu doakan tahun ini bisa tercapai. Ini hanya sekadar kado digital sederhana, semoga kamu suka ya!",
 
     // 3. SURAT: Isi surat yang akan terbuka dari amplop. 
     //    Gunakan tanda <br> jika ingin membuat enter atau baris baru.
-    surat: "Hai kamu,<br><br>Hari ini adalah hari yang sangat spesial untukmu. Aku cuma ingin bilang terima kasih karena selalu jadi versi terbaik dari dirimu sendiri.<br><br>Maaf ya kalau kado kali ini cuma berbentuk digital. Tapi ketahuilah, setiap kata disini ditulis pakai hati. Semoga kamu selalu dikelilingi kebahagiaan dan didekatkan dengan impianmu.<br><br>Jangan sering-sering begadang dan jaga kesehatan selalu, okay? Have a wonderful birthday!<br><br>Love,<br>Aku ❤️",
+    surat: "Hai kamu,<br><br>Hari ini adalah hari yang sangat spesial untukmu. Aku cuma ingin bilang terima kasih karena selalu jadi versi terbaik dari dirimu sendiri.<br><br>Maaf ya kalau kado kali ini cuma berbentuk digital. Tapi ketahuilah, setiap kata disini ditulis pakai hati. Semoga kamu selalu dikelilingi kebahagiaan dan didekatkan dengan impianmu.<br><br>Jangan sering-sering begadang dan jaga kesehatan selalu, okay? Have a wonderful birthday!<br><br>Love,<br>ical ❤️",
 
     // 4. DAFTAR FOTO: Masukkan nama file foto yang ada di dalam folder 'assets'.
     //    Kamu bisa menambah atau mengurangi jumlah foto di bawah.
