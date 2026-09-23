@@ -15,7 +15,7 @@ const CONFIG = {
 
     // 3. SURAT: Isi surat yang akan terbuka dari amplop. 
     //    Gunakan tanda <br> jika ingin membuat enter atau baris baru.
-    surat: "Hai kamu,<br><br>Hari ini adalah hari yang sangat spesial untukmu. Aku cuma ingin bilang terima kasih karena selalu jadi versi terbaik dari dirimu sendiri.<br><br>Maaf ya kalau kado kali ini cuma berbentuk digital. Tapi ketahuilah, setiap kata disini ditulis pakai hati. Semoga kamu selalu dikelilingi kebahagiaan dan didekatkan dengan impianmu.<br><br>Jangan sering-sering begadang dan jaga kesehatan selalu, okay? Have a wonderful birthday!<br><br>Love,<br>ical ❤️",
+    surat: "Hai sayang,<br><br>Hari ini adalah hari yang sangat spesial untukmu. Aku cuma ingin bilang terima kasih karena selalu jadi versi terbaik dari dirimu sendiri.<br><br>Maaf ya kalau kado kali ini cuma berbentuk digital. Tapi ketahuilah, setiap kata disini ditulis pakai hati. Semoga kamu selalu dikelilingi kebahagiaan dan didekatkan dengan impianmu.<br><br>Jangan sering-sering begadang dan jaga kesehatan selalu, okay? Have a wonderful birthday!<br><br>Love,<br>ical ❤️",
 
     // 4. DAFTAR FOTO: Masukkan nama file foto yang ada di dalam folder 'assets'.
     //    Kamu bisa menambah atau mengurangi jumlah foto di bawah.
