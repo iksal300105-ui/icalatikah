@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untukmu yang Spesial... 🎁</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome (Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Container untuk partikel hati/bintang melayang -->
+    <div id="particles-container"></div>
+
+    <!-- Background Music Element -->
+    <audio id="bg-music" loop autoplay preload="auto">
+        <!-- Source akan diatur lewat JavaScript -->
+    </audio>
+
+    <!-- Tombol Kontrol Musik -->
+    <div id="music-control" class="music-control d-none" onclick="toggleMusic()">
+        <i class="fas fa-compact-disc spin" id="music-icon"></i>
+    </div>
+
+    <!-- HALAMAN 1: PEMBUKA -->
+    <section id="page-pembuka" class="page active">
+        <div class="content text-center">
+            <div class="gift-anim pulse delay-1">🎁</div>
+            <h2 class="romantic-text text-glow mt-4 animate-fadeInDown">Ada sesuatu yang ingin aku berikan untukmu...
+            </h2>
+            <button class="btn btn-primary btn-lg mt-5 btn-gift animate-fadeInUp delay-2" onclick="openGift()">Buka
+                Kadonya 🎁</button>
+        </div>
+    </section>
+
+    <!-- HALAMAN 2: UCAPAN ULANG TAHUN -->
+    <section id="page-ucapan" class="page">
+        <div class="content text-center">
+            <div class="glass-box animate-zoomIn">
+                <h1 class="romantic-text title animate-fadeInDown delay-1 text-glow">Selamat Ulang Tahun ❤️</h1>
+                <h2 id="nama-penerima" class="nama animate-fadeInUp delay-2 mt-2"></h2>
+
+                <div class="divider animate-fadeIn delay-3"></div>
+
+                <p id="teks-ucapan" class="ucapan animate-fadeIn delay-3 mt-4"></p>
+
+                <button class="btn btn-outline-light mt-5 btn-next animate-fadeIn delay-4"
+                    onclick="nextPage('page-ucapan', 'page-galeri')">
+                    Selanjutnya <i class="fas fa-heart ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN 3: GALERI FOTO -->
+    <section id="page-galeri" class="page">
+        <div class="content">
+            <h2 class="romantic-text text-center text-glow subtitle mb-4 animate-fadeInDown">For You ✨</h2>
+
+            <div class="row g-3" id="gallery-container">
+                <!-- Foto-foto akan dimasukkan dari JavaScript di sini -->
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-light btn-next animate-fadeIn delay-4"
+                    onclick="nextPage('page-galeri', 'page-surat')">
+                    Ada Satu Lagi... <i class="fas fa-envelope ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN 4: SURAT -->
+    <section id="page-surat" class="page">
+        <div class="content text-center">
+            <h2 class="romantic-text text-glow subtitle mb-5 animate-fadeInDown">Surat Kecil Untukmu 💌</h2>
+
+            <!-- Amplop Interaktif -->
+            <div class="envelope-wrapper animate-zoomIn delay-1" id="envelope" onclick="openEnvelope()">
+                <div class="envelope">
+                    <div class="flap"></div>
+                    <div class="envelope-body"></div>
+                    <i class="fas fa-heart heart-icon"></i>
+                </div>
+                <div class="tap-text blink mt-3">Ketuk Amplopnya</div>
+            </div>
+
+            <!-- Isi Surat Glassmorphism (Tersembunyi dan Muncul Setelah Amplop Diklik) -->
+            <div id="letter-content" class="letter-content glass-box d-none mt-4 text-start">
+                <p id="teks-surat" class="surat-text mb-0"></p>
+                <div class="text-center mt-5">
+                    <button class="btn btn-outline-light btn-next" onclick="nextPage('page-surat', 'page-penutup')">
+                        Akhir... <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HALAMAN 5: PENUTUP -->
+    <section id="page-penutup" class="page">
+        <div class="content text-center">
+            <h3 class="romantic-text subtitle animate-fadeInDown mt-4">
+                "Semoga hari ulang tahunmu menjadi awal dari banyak hal indah yang akan datang."
+            </h3>
+
+            <h1 class="romantic-text title mt-5 animate-zoomIn delay-1 text-glow">Selamat Ulang Tahun ❤️</h1>
+
+            <button class="btn btn-primary mt-5 btn-gift animate-fadeInUp delay-2" onclick="restart()">
+                Selesai
+            </button>
+        </div>
+    </section>
+
+    <!-- Bootstrap Modal Untuk Menampilkan Foto Membesar -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-transparent border-0">
+                <div class="modal-header border-0 pb-0">
+                    <button type="button" class="btn-close btn-close-white ms-auto" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center pt-0">
+                    <img src="" id="modalImage" class="img-fluid rounded border border-light border-3 shadow-lg"
+                        alt="Foto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Scripts Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <!-- Custom Logic Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
